@@ -1,7 +1,7 @@
-# ETF Momentum Rotation Strategy:
+# ETF Momentum Rotation Strategy
 Systematic ETF allocation strategy based on risk-adjusted momentum signals with monthly rebalancing and transaction cost modeling.
 
-# Overview:
+### Overview:
 The portfolio rotates across multiple ETFs using a combined momentum and volatility signal;
 features:
 - 60-day momentum
@@ -10,7 +10,7 @@ features:
 - monthly rebalancing
 - fully invested portfolio (long-only)
 
-# ETF Universe
+### ETF Universe
 
 - SPY (US Equity)
 - QQQ (Technology)
@@ -19,7 +19,7 @@ features:
 - TLT (Long Bonds)
 - GLD (Gold)
 
-# Methodology
+### Methodology
 
 Signal:
 Momentum = P / P(60d) - 1  
@@ -31,16 +31,16 @@ Portfolio:
 - weights sum to 1
 - lagged by 1 period to avoid look-ahead bias
 
-# Results (20Y Backtest)
+### Results (20Y Backtest)
 - Strategy CAGR ~10.8%
 - SPY CAGR ~11.2%
 - Strategy Sharpe: higher
 - Strategy Drawdown: significantly lower
 
-# Key Insight
+### Key Insight
 The strategy reduces drawdown by dynamically reallocating capital toward lower-risk assets during stress periods, at the cost of slightly lower returns during strong equity bull markets due to momentum lag and diversification effects.
 
-# Strategy Underperformance cases:
+### Strategy Underperformance cases:
 The strategy is most vulnerable in the following market regimes:
 
 - **Choppy / mean-reverting markets**, where momentum signals degrade into noise
