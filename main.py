@@ -84,6 +84,7 @@ spy_curve.plot(label="SPY", linewidth=2)
 plt.title("ETF Momentum Rotation vs SPY")
 plt.grid()
 plt.legend()
+plt.savefig("images/equity_curve.png", dpi=150, bbox_inches="tight")
 plt.show()
 
 
@@ -94,6 +95,7 @@ spy_dd.plot(label="SPY", color="blue")
 plt.title("Drawdown Comparison")
 plt.grid()
 plt.legend()
+plt.savefig("images/drawdown.png", dpi=150, bbox_inches="tight")
 plt.show()
 
 # signal heatmap 
@@ -102,12 +104,14 @@ plt.imshow(signal.tail(120).T, aspect='auto', cmap='coolwarm')
 plt.colorbar()
 plt.yticks(range(len(signal.columns)), signal.columns)
 plt.title("Risk-Adjusted Momentum Signal (Last 120 Days)")
+plt.savefig("images/signal.png", dpi=150, bbox_inches="tight")
 plt.show()
 
 # weights evolution plot & latest weights
 weights.tail(252).plot.area(figsize=(12,5))
 plt.title("Portfolio Weights Evolution (Last Year)")
 plt.legend(loc="upper left")
+plt.savefig("images/weights.png", dpi=150, bbox_inches="tight")
 plt.show()
 
 latest_weights = weights.iloc[-1]
